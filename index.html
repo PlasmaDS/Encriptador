@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encriptador de texto</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <img id="logo" src="./src/Images/Logo.png" alt="Logo" />
+      <form action="">
+        <textarea
+          id="textarea"
+          name="textarea"
+          placeholder="Ingrese el texto aqui"
+          oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
+      </form>
+      <div id="conditionsBox">
+        <span class="iconify" data-icon="bi:exclamation-circle-fill"
+          >Solo letras minúsculas y sin acentos</span
+        >
+        <p id="conditions">Solo letras minúsculas y sin acentos</p>
+      </div>
+      <div id="buttons">
+        <button id="encrypt">
+          <span class="buttonText" id="encryptText">Encriptar</span>
+        </button>
+        <button id="decrypt">
+          <span class="buttonText" id="decryptText">Desencriptar</span>
+        </button>
+      </div>
+      <div id="result">
+        <img
+          id="manIllustration"
+          src="./src/Images/Man illustration.png"
+          alt="Man illustration" />
+        <section>
+          <p id="p1">
+            Ningún mensaje fue <br />
+            encontrado
+          </p>
+          <p id="p2">
+            Ingresa el texto que desees encriptar o <br />
+            desencriptar.
+          </p>
+        </section>
+      </div>
+    </div>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+  </body>
+</html>
