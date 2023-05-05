@@ -1,6 +1,7 @@
 var text;
 var encryptedText = "";
 var decryptedText = "";
+var lastAction;
 
 function textCapture() {
   text = document.querySelector("#textarea").value;
@@ -34,9 +35,33 @@ function encrypt() {
     }
   }
   document.querySelector("#resultText").innerHTML = encryptedText;
-  return encryptedText;
+  lastAction = encryptedText;
+}
+
+function decrypt() {
+  let decryptedText = encryptedText.replace(
+    /(enter|imes|ai|ober|ufat)/g,
+    function (match) {
+      switch (match) {
+        case "enter":
+          return "e";
+        case "imes":
+          return "i";
+        case "ai":
+          return "a";
+        case "ober":
+          return "o";
+        case "ufat":
+          return "u";
+        default:
+          return match;
+      }
+    }
+  );
+  document.querySelector("#resultText").innerHTML = decryptedText;
+  lastAction = decryptedText;
 }
 
 function copyText() {
-  navigator.clipboard.writeText(encryptedText);
+  navigator.clipboard.writeText(lastAction);
 }
