@@ -102,7 +102,7 @@ button {
   border: 1px solid #0a3871;
 }
 
-#result {
+#resultBox {
   position: absolute;
   width: 400px;
   height: 944px;

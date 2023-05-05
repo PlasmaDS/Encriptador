@@ -31,29 +31,31 @@
           <h6 id="conditions">Solo letras minúsculas y sin acentos</h6>
         </div>
         <div id="buttons">
-          <button id="encrypt">Encriptar</button>
+          <button id="encrypt" onclick="encrypt()">Encriptar</button>
           <button id="decrypt">Desencriptar</button>
         </div>
       </section>
-      <section id="result">
-        <textarea name="" id="" cols="30" rows="10"></textarea>
-        <img
-          id="manIllustration"
-          src="./src/Images/Man illustration.png"
-          alt="Man illustration" />
-        <div id="noMsessageYet">
-          <p id="p1">
-            Ningún mensaje fue <br />
-            encontrado
-          </p>
-          <p id="p2">
-            Ingresa el texto que desees encriptar o <br />
-            desencriptar.
-          </p>
-        </div>
-        <button id="copy">Copiar</button>
+      <section id="resultBox">
+        <section id="resultText">
+          <img
+            id="manIllustration"
+            src="./src/Images/Man illustration.png"
+            alt="Man illustration" />
+          <div id="noMsessageYet">
+            <p id="p1">
+              Ningún mensaje fue <br />
+              encontrado
+            </p>
+            <p id="p2">
+              Ingresa el texto que desees encriptar o <br />
+              desencriptar.
+            </p>
+          </div>
+        </section>
+        <button id="copy" onclick="copyText()">Copiar</button>
       </section>
     </main>
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
