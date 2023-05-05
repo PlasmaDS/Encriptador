@@ -4,7 +4,7 @@ var decryptedText = "";
 var lastAction;
 
 function textCapture() {
-  text = document.querySelector("#textarea").value;
+  text = document.querySelector("#textarea").value.toLowerCase();
   document.querySelector("#textarea").value = "";
   return text;
 }
@@ -39,25 +39,23 @@ function encrypt() {
 }
 
 function decrypt() {
-  let decryptedText = encryptedText.replace(
-    /(enter|imes|ai|ober|ufat)/g,
-    function (match) {
-      switch (match) {
-        case "enter":
-          return "e";
-        case "imes":
-          return "i";
-        case "ai":
-          return "a";
-        case "ober":
-          return "o";
-        case "ufat":
-          return "u";
-        default:
-          return match;
-      }
+  textCapture();
+  decryptedText = text.replace(/(enter|imes|ai|ober|ufat)/g, function (match) {
+    switch (match) {
+      case "enter":
+        return "e";
+      case "imes":
+        return "i";
+      case "ai":
+        return "a";
+      case "ober":
+        return "o";
+      case "ufat":
+        return "u";
+      default:
+        return match;
     }
-  );
+  });
   document.querySelector("#resultText").innerHTML = decryptedText;
   lastAction = decryptedText;
 }
