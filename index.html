@@ -18,41 +18,46 @@
       <img id="logo" src="./src/Images/Logo.png" alt="Logo" />
     </header>
     <main>
-      <section>
-        <textarea
-          id="textarea"
-          name="textarea"
-          placeholder="Ingrese el texto aqui"
-          oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
-        <div id="conditionsBox">
-          <span class="iconify" data-icon="bi:exclamation-circle-fill"
-            >Solo letras minúsculas y sin acentos</span
-          >
-          <h6 id="conditions">Solo letras minúsculas y sin acentos</h6>
+      <textarea
+        id="textarea"
+        name="textarea"
+        placeholder="Ingrese el texto aqui"
+        oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
+      <div id="conditionsBox">
+        <span class="iconify" data-icon="bi:exclamation-circle-fill"
+          >Solo letras minúsculas y sin acentos</span
+        >
+        <h6 id="conditions">Solo letras minúsculas y sin acentos</h6>
+      </div>
+      <div id="buttons">
+        <button id="encrypt" onclick="encrypt()">Encriptar</button>
+        <button id="decrypt" onclick="decrypt()">Desencriptar</button>
+      </div>
+      <section id="resultContainer">
+        <div id="resultBox">
+          <textarea
+            id="resultText"
+            name="resultText"
+            oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'
+            disabled></textarea>
+          <section id="noEncryptedYet">
+            <img
+              id="manIllustration"
+              src="./src/Images/Man illustration.png"
+              alt="Man illustration" />
+            <div id="noMsessageYet">
+              <p id="p1">
+                Ningún mensaje fue <br />
+                encontrado
+              </p>
+              <p id="p2">
+                Ingresa el texto que desees encriptar o <br />
+                desencriptar.
+              </p>
+            </div>
+          </section>
+          <button id="copy" onclick="copyText()">Copiar</button>
         </div>
-        <div id="buttons">
-          <button id="encrypt" onclick="encrypt()">Encriptar</button>
-          <button id="decrypt" onclick="decrypt()">Desencriptar</button>
-        </div>
-      </section>
-      <section id="resultBox">
-        <section id="resultText">
-          <img
-            id="manIllustration"
-            src="./src/Images/Man illustration.png"
-            alt="Man illustration" />
-          <div id="noMsessageYet">
-            <p id="p1">
-              Ningún mensaje fue <br />
-              encontrado
-            </p>
-            <p id="p2">
-              Ingresa el texto que desees encriptar o <br />
-              desencriptar.
-            </p>
-          </div>
-        </section>
-        <button id="copy" onclick="copyText()">Copiar</button>
       </section>
     </main>
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>

@@ -4,7 +4,11 @@ var decryptedText = "";
 var lastAction;
 
 function textCapture() {
-  text = document.querySelector("#textarea").value.toLowerCase();
+  text = document
+    .querySelector("#textarea")
+    .value.toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
   document.querySelector("#textarea").value = "";
   return text;
 }
@@ -35,6 +39,8 @@ function encrypt() {
     }
   }
   document.querySelector("#resultText").innerHTML = encryptedText;
+  document.querySelector("#noEncryptedYet").style.display = "none";
+  document.querySelector("#copy").style.display = "block";
   lastAction = encryptedText;
 }
 
@@ -57,6 +63,8 @@ function decrypt() {
     }
   });
   document.querySelector("#resultText").innerHTML = decryptedText;
+  document.querySelector("#noEncryptedYet").style.display = "none";
+  document.querySelector("#copy").style.display = "block";
   lastAction = decryptedText;
 }
 
