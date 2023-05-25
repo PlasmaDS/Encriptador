@@ -71,3 +71,18 @@ function decrypt() {
 function copyText() {
   navigator.clipboard.writeText(lastAction);
 }
+
+const root = document.documentElement;
+let alturaAnterior = 100;
+
+function reorganizarElementos() {
+  const textarea = document.querySelector("#textarea");
+  const alturaActual = textarea.clientHeight;
+  if (alturaActual >= alturaAnterior && alturaActual >= 680) {
+    root.style.setProperty("--altura-textarea", `${alturaActual - 628 + 48}px`);
+    alturaAnterior = alturaActual;
+  } else if (alturaActual < alturaAnterior && alturaActual >= 628) {
+    root.style.setProperty("--altura-textarea", `${alturaAnterior - 628}px`);
+    alturaAnterior = alturaActual;
+  }
+}
