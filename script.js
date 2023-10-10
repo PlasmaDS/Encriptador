@@ -41,6 +41,7 @@ function encrypt() {
   document.querySelector("#resultText").innerHTML = encryptedText;
   document.querySelector("#noEncryptedYet").style.display = "none";
   document.querySelector("#copy").style.display = "block";
+  reestablecerTextarea();
   lastAction = encryptedText;
 }
 
@@ -65,6 +66,7 @@ function decrypt() {
   document.querySelector("#resultText").innerHTML = decryptedText;
   document.querySelector("#noEncryptedYet").style.display = "none";
   document.querySelector("#copy").style.display = "block";
+  reestablecerTextarea();
   lastAction = decryptedText;
 }
 
@@ -85,4 +87,13 @@ function reorganizarElementos() {
     root.style.setProperty("--altura-textarea", `${alturaAnterior - 628}px`);
     alturaAnterior = alturaActual;
   }
+}
+
+function reestablecerTextarea() {
+  const rootStyles = getComputedStyle(document.documentElement);
+  const alturaTextarea = rootStyles.getPropertyValue("--altura-textarea");
+  root.style.setProperty("--altura-textarea", "40px");
+
+  const textarea = document.getElementById("textarea");
+  textarea.style.height = "100px";
 }
